@@ -1,0 +1,76 @@
+{
+  "name": "cjfnlwfhpc",
+  "productName": "cjfnlwfhpc",
+  "version": "1.0.0",
+  "description": "CJFnL WFH PC for Windows.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "Dicky Afriansyah",
+    "email": "dicky.afriansyah98@gmail.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": {
+          "unpackDir": "node_modules/screenshot-desktop/lib/win32"
+        },
+        "icon": "src/assets/img/icon"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "cjfnlwfhpc",
+            "title": "CJ FnL WFH",
+            "iconUrl": "https://www.cj.co.kr/resources/img/favicon.ico",
+            "setupIcon": "src/assets/img/icon.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "dateformat": "^4.5.1",
+    "electron-is-dev": "^2.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "form-data": "^4.0.0",
+    "fs-extra": "^10.0.0",
+    "jimp": "^0.16.1",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "screenshot-desktop": "^1.12.6",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.57",
+    "@electron-forge/maker-deb": "^6.0.0-beta.57",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.57",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
+    "@electron-forge/maker-zip": "^6.0.0-beta.57",
+    "electron": "13.1.2"
+  }
+}
